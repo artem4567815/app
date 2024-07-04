@@ -18,7 +18,11 @@ def searching_epic(game_name):
 
     # Проверка на наличие данных
     if not search_results or 'data' not in search_results or 'Catalog' not in search_results['data']:
-        return None
+        return {
+            'originalPrice': "Game Is Not Found",
+            'discountPrice': "Game Is Not Found",
+            'name': "Game Is Not Found"
+        }
 
     for game in search_results['data']['Catalog']['searchStore']['elements']:
         if game['title'].lower() == game_name.lower():

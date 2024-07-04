@@ -19,7 +19,7 @@ def search():
     epic_data = searching_epic(game_name)
     apps = []
 
-    if not game_data["apps"]:
+    if game_data["apps"][0]["name"] != game_name:
         test_data = [
             {
                 "name": epic_data['name'],
@@ -32,7 +32,18 @@ def search():
         if test_data[0]['name'] != "Game Is Not Found":
             apps.append(test_data)
     for game in game_data["apps"]:
-        print(game)
+        if game['name'] != game_name:
+            test_data = [
+                {
+                    "name": game['name'],
+                    "steam_price": game["price"],
+                    "epic_price": "Game is Not Found",
+                    "img": game['img'],
+                    "details_url": f"/details/{None}"
+                }
+            ]
+            apps.append(test_data)
+            continue
         test_data = [
             {
                 "name": game["name"],
@@ -43,18 +54,7 @@ def search():
             }
         ]
         apps.append(test_data)
-        if game['name'] != game_name:
-            test_data = [
-                {
-                    "name": epic_data['name'],
-                    "steam_price": "Game is not found",
-                    "epic_price": '$' + epic_data["originalPrice"],
-                    "img": epic_data['img'],
-                    "details_url": f"/details/{None}"
-                }
-            ]
-            if test_data[0]['name'] != "Game Is Not Found":
-                apps.append(test_data)
+
     return jsonify(apps)
 
 
