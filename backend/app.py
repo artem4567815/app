@@ -1,13 +1,10 @@
 from flask import Flask, render_template, request, jsonify
-#from models import db, Game
-#import config
 from methods import searching_steam, searching_epic
 from flask_cors import CORS
 
 
 app = Flask(__name__)
 CORS(app)
-#db.init_app(app)
 
 
 @app.route('/')

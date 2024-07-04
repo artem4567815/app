@@ -1,10 +1,10 @@
 import os
 from steam_web_api import Steam
 from epicstore_api import EpicGamesStoreAPI
-from backend import config
+from backend import steam_key
 
 def searching_steam(game_name):
-    KEY = os.environ.get(config.key)
+    KEY = os.environ.get(steam_key)
     steam = Steam(KEY)
     user = steam.apps.search_games(game_name)
     if user is None:
