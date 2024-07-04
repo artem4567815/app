@@ -11,3 +11,5 @@ POSTGRES_HOST = os.getenv('POSTGRES_HOST', 'localhost')
 POSTGRES_PORT = os.getenv('POSTGRES_PORT', 5432)
 POSTGRES_DATABASE = os.getenv('POSTGRES_DATABASE', 'prod')
 APP_DEBUG = bool(os.getenv('APP_DEBUG'))
+
+key=""
