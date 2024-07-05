@@ -19,4 +19,5 @@ yarn-error.log*
 node_modules
 
 backend/config.py
+backend/game_cache.sqlite
 
