@@ -3,3 +3,4 @@ Flask-SQLAlchemy
 psycopg2-binary
 epicstore_api
 steam_web_api
+howlongtobeatpy
