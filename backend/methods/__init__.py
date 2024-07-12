@@ -1,2 +1,2 @@
 from .searching import *
-from .get_imge import *
+from .steam_api import *
